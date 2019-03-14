@@ -1,0 +1,42 @@
+body {
+    /* background:black; */
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+    position: absolute;
+    top:0;
+    right: 0;
+    left:0;
+    z-index: 3;
+}
+
+#newsShowCase {
+    background:url('../images/news.jpeg')bottom center / cover no-repeat;
+    min-height: 600px;
+    position: relative;
+}
+
+#newsShowCase #overlay {
+    background:rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+#newsShowCase #header {
+    z-index: 2;
+}
+
+@media(max-width:768px){
+    #newsShowCase {
+        min-height: 500px;
+        
+    }
+    #newsShowCase h1 {
+        font-size: 4rem;
+    }
+}
+
