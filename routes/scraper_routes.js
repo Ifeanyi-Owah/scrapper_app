@@ -16,30 +16,32 @@ router.get("/saved", function(req, res){
 
 router.get("/article", function(req, res){
     var url = 'https://www.nytimes.com/section/business';
-axios.get(url)
-.then(function(response){
-  var $ = cheerio.load(response.data);
-  var results = [];
-  $("h2.css-y3otqb").each(function(i, element){
-    var title = $(element).text();
-    var link = $(element).children().attr("href");
-    var par = $(element).siblings().text();
+    axios.get(url)
+      .then(function(response){
+          var $ = cheerio.load(response.data);
+          var results = [];
+          $("h2.css-y3otqb").each(function(i, element){
+            var title = $(element).text();
+            var linkRoute = $(element).children().attr("href");
+            var link = `https://www.nytimes.com${linkRoute}`
+            var par = $(element).siblings().text();
 
-    var article = {
-        title,
-        link,
-        par,
-    }
+            var article = {
+              title,
+              link,
+              par,
+            }
 
-    results.push(article);
-    res.send(results);
-  });
-   
-   console.log(results);
-   
-  });
+            results.push(article);
+            // res.send(results);
+          });
+          res.send(results);
+          console.log(results);
+        
+      });
 
 });
+
 
 
 module.exports = router;

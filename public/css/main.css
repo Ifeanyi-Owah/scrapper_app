@@ -30,11 +30,19 @@ body {
     z-index: 2;
 }
 .scrap_news_id {
+   
+}
+
+.divClass {
     width: 90%;
-    height: 200px;
+    min-width: 500px;
+    min-height: 150px;
+    height: auto;
     background: #fff;
     margin: 20px auto;
     box-shadow: 3px 3px #eee;
+    background: #ebf3fe;
+    padding: 8px;
 }
 
 @media(max-width:768px){
