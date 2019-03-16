@@ -29,6 +29,13 @@ body {
 #newsShowCase #header {
     z-index: 2;
 }
+.scrap_news_id {
+    width: 90%;
+    height: 200px;
+    background: #fff;
+    margin: 20px auto;
+    box-shadow: 3px 3px #eee;
+}
 
 @media(max-width:768px){
     #newsShowCase {

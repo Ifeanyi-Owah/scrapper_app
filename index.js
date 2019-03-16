@@ -11,14 +11,6 @@ const expressHbs = require('express-handlebars');
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(scrapRoutes);
 
-// app.get("/", function(req, res){
-//     res.sendFile(path.join(__dirname + '/views','/index.html'));
-// });
-
-// app.get("/saved", function(req, res){
-//   res.sendFile(path.join(__dirname + '/views','/saved.html' ));
-// });
-
 app.get("*", function(req, res){
   res.send("<h1>page not found</h1>");
 });
